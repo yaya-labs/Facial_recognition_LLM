@@ -1,4 +1,4 @@
-# LLM with Face Recognition
+# LLM with Facial Recognition
 
 A conversational system  that integrates face recognition capabilities with LLMs. The system remembers people it interacts with and maintains conversation history for each recognised face.
 
