@@ -101,7 +101,7 @@ def ensure_csv_files_exist():
     os.makedirs(TRAINING_DIR, exist_ok=True)
 
 class FaceManager:
-    def __init__(self, embedding_threshold=0.5, max_memories=5):
+    def __init__(self, embedding_threshold=0.2, max_memories=5):
         self.logger = logging.getLogger(self.__class__.__name__)
         
         # Initialize face detection
