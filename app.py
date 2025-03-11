@@ -526,7 +526,7 @@ Based on the previous summary and this recent conversation, please provide an up
                 messages=[
                     {
                         'role': 'system',
-                        'content': 'Generate an updated summary of the person based on both previous context and recent conversation. Maintain consistency while incorporating new information.',
+                        'content': 'Generate an updated summary of the person based on both previous context and recent conversation. Maintain consistency while incorporating new information. Remember you are Desi, they are not. the person the summary is about should not be Desi',
                     },
                     {
                         'role': 'user',
