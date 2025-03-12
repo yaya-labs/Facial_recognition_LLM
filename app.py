@@ -39,7 +39,7 @@ except ImportError:
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
 # Prompt for the AI assistant
-prompt = """You are an AI assistant called Desi. Reply with short consise replies"""
+prompt = """You are an AI assistant called. Reply with short consise replies"""
 
 # CSV Configuration
 CONVERSATION_FILE = 'conversations.csv'
@@ -496,12 +496,9 @@ Recent conversation:
 
 Based on the previous summary and this recent conversation, please provide an updated summary of who this person is and any key information about them."""
         try:
-            client = OpenAI(
-                base_url = 'https://api.asi1.ai/v1/chat/completions',
-                api_key='', 
-            )  
+            client = OpenAI(api_key=OPENAI_API_KEY)  
             completion = client.chat.completions.create(
-                model="asi1-mini",   
+                model="gpt-4o-mini",  # Use gpt-4o-mini for consistency with the main model
                 messages=[
                     {
                         'role': 'system',
@@ -689,7 +686,7 @@ class ChatApp:
             full_context = "\n".join(context_parts)
             
             completion = self.openai_client.chat.completions.create(
-                model="asi1-mini",
+                model="gpt-4o-mini",
                 messages=[
                     {'role': 'system', 'content': prompt},
                     {'role': 'user', 'content': full_context},
